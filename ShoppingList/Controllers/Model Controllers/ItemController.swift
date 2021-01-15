@@ -36,14 +36,12 @@ class ItemController {
     }
     
     // MARK: - Persistence
-    //create a url
     private func fileURL() -> URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectoryURL = urls[0].appendingPathComponent("ShoppingList.json")
         return documentsDirectoryURL
     }
     
-    //save data
     func saveToPersistentStorage() {
         do {
             //decode and assign the entries array to the a data variable
@@ -56,7 +54,6 @@ class ItemController {
         }
     }
     
-    //load data
     func loadFromPersistentStorage() {
         do {
             let data = try Data(contentsOf: fileURL())

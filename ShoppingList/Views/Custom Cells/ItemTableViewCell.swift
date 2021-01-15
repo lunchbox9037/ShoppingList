@@ -11,13 +11,13 @@ protocol ItemTableViewCellDelegate: AnyObject {
     func togglePurchasedButton(_ sender: ItemTableViewCell)
     func updateStepperValue(_ sender: ItemTableViewCell)
 }
+
 class ItemTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var itemPurchasedButton: UIButton!
     @IBOutlet weak var quantityStepper: UIStepper!
-    
     
     // MARK: - Properties
     weak var delegate: ItemTableViewCellDelegate?
@@ -37,6 +37,7 @@ class ItemTableViewCell: UITableViewCell {
             quantityStepper.stepValue = 1
             quantityStepper.minimumValue = 1
             quantityStepper.maximumValue = 20
+            quantityStepper.autorepeat = true
             quantityStepper.value = Double(quantity)
             quantityLabel.text = String(quantity)
         }

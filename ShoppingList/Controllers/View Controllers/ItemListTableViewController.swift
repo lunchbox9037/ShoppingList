@@ -8,10 +8,6 @@
 import UIKit
 
 class ItemListTableViewController: UITableViewController {
-    // MARK: - Outlets
-    
-    // MARK: - Properties
-    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +56,6 @@ class ItemListTableViewController: UITableViewController {
         return cell
     }
 
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let itemToDelete = ItemController.shared.items[indexPath.row]
